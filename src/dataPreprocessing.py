@@ -10,35 +10,34 @@ class DPP():
     def __init__(self) -> None:
         pass
 
-def load_data(self):
-    #loading data
-    x_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv')
-    y_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData_Label.csv')
+    def load_data(self):
+        #loading data
+        x_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv')
+        y_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData_Label.csv')
+
+        return x_data
+
+    def splitter(self, x_data):
+
+        x = x_data.drop(columns = "Index")[:, :-1]
+        y = x_data.drop(columns = "Index")[:, -1]
 
 
-    return x_data
+        scaler = StandardScaler()
 
-def splitter(self, x_data):
+        x = scaler.fit_transform(x)
 
-    x = x_data.drop(columns = "Index")[:, :-1]
-    y = x_data.drop(columns = "Index")[:, -1]
+        xtrain, xtest, ytrain, ytest = tts(x, y, test_size = 0.2, random_state = 42)
 
+        return xtrain, xtest, ytrain, ytest
 
-    scaler = StandardScaler()
-
-    x = scaler.fit_transform(x)
-
-    xtrain, xtest, ytrain, ytest = tts(x, y, test_size = 0.2, random_state = 42)
-
-    return xtrain, xtest, ytrain, ytest
-
-def split_data_ann(self, x_data):
-    x = x_data.drop(columns = "Index")[:, :-1]
-    y = x_data.drop(columns = "Index")[:, -1]
+    def split_data_ann(self, x_data):
+        x = x_data.drop(columns = "Index")[:, :-1]
+        y = x_data.drop(columns = "Index")[:, -1]
     
-    scaler = StandardScaler()
-    x =scaler.fit_transform(x)
+        scaler = StandardScaler()
+        x =scaler.fit_transform(x)
 
-    xtrain, xtest, ytrain, ytest = tts(x, y, test_size = 0.2, random_state = 42)
+        xtrain, xtest, ytrain, ytest = tts(x, y, test_size = 0.2, random_state = 42)
 
-    return xtrain, xtest, ytrain, ytest
+        return xtrain, xtest, ytrain, ytest

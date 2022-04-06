@@ -11,7 +11,7 @@ from dataPreprocessing import DPP
 #Load Data
 preprocessor = DPP()
 data = preprocessor.load_data()
-xtrain, xtest, ytrain, ytest = preprocessor.split_data(data)
+xtrain, xtest, ytrain, ytest = preprocessor.splitter(data)
 
 #Classifier
 clsf = SVC(kernel='linear')

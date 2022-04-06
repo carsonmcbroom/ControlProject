@@ -8,8 +8,8 @@
 import pandas as pd
 
 #import x and y data
-x_data = pd.read_csv(r'C:\Users\nflfa\Desktop\Git\ControlProject\RawData\RawData.csv')
-y_data = pd.read_csv(r'C:\Users\nflfa\Desktop\Git\ControlProject\RawData\RawData_Label.csv')
+x_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv')
+y_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData_Label.csv')
 
 print(x_data)
 print(y_data)

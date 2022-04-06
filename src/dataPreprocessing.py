@@ -11,16 +11,15 @@ class DPP():
         pass
 
     def load_data(self):
-         #loading data
-        x_data = pd.read_csv(r'C:\Users\nflfa\Desktop\Git\ControlProject\RawData\RawData.csv').dropna()
-
+        #loading data
+        x_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv')
 
         return x_data
 
     def splitter(self, x_data):
 
-        x = x_data.drop(columns = "Index")
-        y = x_data.drop(columns = "Index")
+        x = x_data.drop(columns = "Index")[:, :-1]
+        y = x_data.drop(columns = "Index")[:, -1]
 
 
         scaler = StandardScaler()

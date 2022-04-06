@@ -12,8 +12,8 @@ class DPP():
 
 def load_data(self):
     #loading data
-    x_data = pd.read.csv('C:\Users\nflfa\Desktop\Git\ControlProject\RawData\RawData.csv')
-    y_data = pd.read.csv('C:\Users\nflfa\Desktop\Git\ControlProject\RawData\RawData_Label.csv')
+    x_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv')
+    y_data = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData_Label.csv')
 
     return x_data, y_data
 

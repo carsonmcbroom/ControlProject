@@ -1,6 +1,6 @@
 from src.dataPreprocessing import DPP
 
-def test():
+def loadtest():
     preprocessor = DPP()
     data = preprocessor.load_data()
     print('test has run')

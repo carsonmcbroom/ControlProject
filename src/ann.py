@@ -66,7 +66,7 @@ def train(self, net, trainingload):
 
     return train_loss
 
-def accuracy(self, model, testingload):
+def accuracy2(self, model, testingload):
     model.eval()
 
     with torch.no_grad():

@@ -4,6 +4,6 @@ def test():
     preprocessor = DPP()
     data = preprocessor.load_data()
 
-    xtrain, xtest, ytrain, ytest = preprocessor.split_data(data)
+    xtrain, xtest, ytrain, ytest = preprocessor.splitter(data)
 
     return None

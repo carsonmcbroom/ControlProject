@@ -52,7 +52,7 @@ class ModelBuilder(DPP, Plotters, ANN, Net):
         #get performance
         DT_accuracy = accuracy_score(ytest, DT_predicted)
 
-        return DT_classifier
+        return DT_accuracy
 
     def ann(self, xtrain, xtest, ytrain, ytest):
         ann_classifier = ANN()
@@ -66,7 +66,7 @@ class ModelBuilder(DPP, Plotters, ANN, Net):
 
         accuracy = ann_classifier.accuracy2(model, testingload)
 
-        return ann_classifier, train_loss
+        return accuracy, train_loss
 
 
 

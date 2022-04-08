@@ -1,11 +1,11 @@
 from src.modelBuilder import ModelBuilder
-
+from src.dataPreprocessing import DPP
 def mlptest():
     builder = ModelBuilder()
 
-    data = builder.load_data()
+    data = DPP.load_data()
 
-    xtrain, xtest, ytrain, ytest = builder.split_data(data)
+    xtrain, xtest, ytrain, ytest = DPP.splitter(data)
 
     model = builder.ann(xtrain, xtest, ytrain, ytest)
 

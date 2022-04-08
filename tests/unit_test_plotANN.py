@@ -1,16 +1,17 @@
 from src.modelBuilder import ModelBuilder
-
+from src.dataPreprocessing import DPP
+from src.plotters import Plotters as PL
 
 def test():
 
     builder = ModelBuilder()
 
-    data = builder.load_data()
+    data = DPP.load_data()
 
-    xtrain, xtest, ytrain, ytest = builder.split_data_ann(data)
+    xtrain, xtest, ytrain, ytest = DPP.split_data_ann(data)
 
     ann_classifier, train_loss = builder.ann(xtrain, xtest, ytrain, ytest)
 
-    builder.plotANN(train_loss)
+    PL.plotANN(train_loss)
 
     return None

@@ -1,15 +1,17 @@
 from src.modelBuilder import ModelBuilder
+from src.dataPreprocessing import DPP
+from src.plotters import Plotters as PL
 
 def test():
 
     builder = ModelBuilder()
 
-    data = builder.load_data()
+    data = DPP.load_data()
 
-    xtrain, xtest, ytrain, ytest = builder.split_data(data)
+    xtrain, xtest, ytrain, ytest = DPP.splitter(data)
 
     model = builder.dt(xtrain, xtest, ytrain, ytest)
 
-    builder.plotTree(model)
+    PL.plotTree(model)
 
     return None

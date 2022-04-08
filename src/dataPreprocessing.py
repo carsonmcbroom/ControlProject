@@ -18,8 +18,8 @@ class DPP():
 
     def splitter(self, x_data):
 
-        x = x_data.drop(columns = "Index")[:, :-1]
-        y = x_data.drop(columns = "Index")[:, -1]
+        x = x_data.drop(columns = ["Index", "label"])
+        y = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv', sep=seperator, usecols=['label'])
 
 
         scaler = StandardScaler()
@@ -31,8 +31,8 @@ class DPP():
         return xtrain, xtest, ytrain, ytest
 
     def split_data_ann(self, x_data):
-        x = x_data.drop(columns = "Index")[:, :-1]
-        y = x_data.drop(columns = "Index")[:, -1]
+        x = x_data.drop(columns = ["Index", "label"])
+        y = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv', sep=seperator, usecols=['label'])
     
         scaler = StandardScaler()
         x =scaler.fit_transform(x)

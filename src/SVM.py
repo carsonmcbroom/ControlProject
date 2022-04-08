@@ -15,7 +15,7 @@ xtrain, xtest, ytrain, ytest = preprocessor.splitter(data)
 ytrain = ytrain.values.ravel()
 
 #Classifier
-clsf = SVC(kernel='linear')
+clsf = SVC()
 clsf.fit(xtrain, ytrain) 
 
 #Prediction

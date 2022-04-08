@@ -1,18 +1,14 @@
-
 from sklearn.svm import SVC
 from sklearn.metrics import classification_report as CLR
 from sklearn.metrics import confusion_matrix as CMX
-
 from dataPreprocessing import DPP
-
-
-#make function w/ xtrain, ytrain and unit test
 
 #Load Data
 preprocessor = DPP()
 data = preprocessor.load_data()
 xtrain, xtest, ytrain, ytest = preprocessor.splitter(data)
-ytrain = ytrain.values.ravel()
+
+ytrain = ytrain.values.ravel()   #Used ravel on ytrain since SVC().fit needs 1D array for y input 
 
 #Classifier
 clsf = SVC()   #used default kernel (rbf) for better fit

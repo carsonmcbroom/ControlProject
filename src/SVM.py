@@ -12,13 +12,14 @@ from dataPreprocessing import DPP
 preprocessor = DPP()
 data = preprocessor.load_data()
 xtrain, xtest, ytrain, ytest = preprocessor.splitter(data)
+ytrain = ytrain.values.ravel()
 
 #Classifier
 clsf = SVC(kernel='linear')
 clsf.fit(xtrain, ytrain) 
 
 #Prediction
-y_pred = clsf.fit(xtest)
+y_pred = clsf.predict(xtest)
 
 #Evaluation
 print(CMX(ytest,y_pred))

@@ -32,7 +32,7 @@ class DPP():
 
     def split_data_ann(self, x_data):
         x = x_data.drop(columns = ["Index", "label"])
-        y = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv', sep=seperator, usecols=['label'])
+        y = pd.read_csv(r'https://raw.githubusercontent.com/carsonmcbroom/ControlProject/main/RawData/RawData.csv', usecols=['label'])
     
         scaler = StandardScaler()
         x =scaler.fit_transform(x)

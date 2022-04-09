@@ -1,3 +1,3 @@
-from tests.unit_test_data_load import test
+from tests.unit_test_split_data import test
 
 test()
